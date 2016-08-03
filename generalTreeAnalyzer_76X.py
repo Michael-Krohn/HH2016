@@ -299,7 +299,35 @@ genjet1BH = array('f', [-100.0])
 genjet2BH = array('f', [-100.0])
 genjet1CH = array('f', [-100.0])
 genjet2CH = array('f', [-100.0])
-
+MET = array('f', [-100.0])
+nAK08Jets = array('f', [-100.0])
+nAK04Jets = array('f', [-100.0])
+DeltaPhi1 = array('f', [-100.0])
+DeltaPhi2 = array('f', [-100.0])
+DeltaPhi3 = array('f', [-100.0])
+DeltaPhi4 = array('f', [-100.0])
+nAK04btagsMWP = array('f', [-100.0])
+nLooseEle = array('f', [-100.0])
+nLooseMu = array('f', [-100.0])
+HLT_PFHT350_v = array('f', [-100.0])
+HLT_PFHT400_SixJet30_v = array('f', [-100.0])
+HLT_PFHT450_SixJet40_v = array('f', [-100.0])
+HLT_PFMET120_Mu5_v = array('f', [-100.0])
+HLT_PFHT800_v = array('f', [-100.0])
+HLT_PFHT750_4JetPt50_v = array('f', [-100.0])
+HLT_PFHT350_PFMET100_v = array('f', [-100.0])
+HLT_PFMET170_NoiseCleaned_v = array('f', [-100.0])
+HLT_PFMET120_PFMHT120_IDTight_v =  array('f', [-100.0])
+HLT_PFMET110_PFMHT110_IDTight_v = array('f', [-100.0])
+HLT_PFMET100_PFMHT100_IDTight_v = array('f', [-100.0])
+HLT_PFMET90_PFMHT90_IDTight_v = array('f', [-100.0])
+HLT_PFHT400_SixJet30_DoubleBTagCSV_p056_v = array('f', [-100.0])
+HLT_PFHT450_SixJet40_BTagCSV_p056_v = array('f', [-100.0])
+HLT_AK8PFHT600_TrimR0p1PT0p03Mass50_BTagCSV_p20_v = array('f', [-100.0])
+HLT_AK8PFHT650_TrimR0p1PT0p03Mass50_v = array('f', [-100.0])
+HLT_AK8PFHT700_TrimR0p1PT0p03Mass50_v = array('f', [-100.0])
+HLT_PFHT650_WideJetMJJ900DEtaJJ1p5_v = array('f', [-100.0])
+HLT_PFHT650_WideJetMJJ950DEtaJJ1p5_v = array('f', [-100.0])
 
 #creating the tree branches we need
 myTree.Branch('jet1pt', jet1pt, 'jet1pt/F')
@@ -322,6 +350,9 @@ myTree.Branch('jet1s1csv', jet1s1csv, 'jet1s1csv/F')
 myTree.Branch('jet2s1csv', jet2s1csv, 'jet2s1csv/F')
 myTree.Branch('jet1s2csv', jet1s2csv, 'jet1s2csv/F')
 myTree.Branch('jet2s2csv', jet2s2csv, 'jet2s2csv/F')
+myTree.Branch('nAK08Jets', nAK08Jets, 'nAK08Jets/F')
+myTree.Branch('nAK04Jets', nAK04Jets, 'nAK04Jets/F')
+myTree.Branch('nAK04btagsMWP', nAK04btagsMWP, 'nAK04btagsMWP/F')
 myTree.Branch('nHiggsTags', nHiggsTags, 'nHiggsTags/F')
 myTree.Branch('triggerpassbb', triggerpassbb, 'triggerpassbb/F')
 myTree.Branch('triggerpasssj', triggerpasssj, 'triggerpasssj/F')
@@ -356,6 +387,10 @@ myTree.Branch('jet2l2l3', jet2l2l3, 'jet2l2l3/F')
 myTree.Branch('jet1JER', jet1JER, 'jet1JER/F') 
 myTree.Branch('jet2JER', jet2JER, 'jet2JER/F') 
 myTree.Branch('json', json, 'json/F')
+myTree.Branch('DeltaPhi1', DeltaPhi1, 'DeltaPhi1/F')
+myTree.Branch('DeltaPhi2', DeltaPhi2, 'DeltaPhi2/F')
+myTree.Branch('DeltaPhi3', DeltaPhi3, 'DeltaPhi3/F')
+myTree.Branch('DeltaPhi4', DeltaPhi4, 'DeltaPhi4/F')
 myTree.Branch('SF', SF, 'SF/F')
 myTree.Branch('SFup', SFup, 'SFup/F')
 myTree.Branch('SFdown', SFdown, 'SFdown/F')
@@ -374,6 +409,7 @@ myTree.Branch('norm',norm,'norm/F')
 myTree.Branch('evt',evt,'evt/F')
 myTree.Branch('ht', ht, 'ht/F')
 myTree.Branch('htJet30', htJet30, 'htJet30/F')
+myTree.Branch('MET', MET, 'MET/F')
 myTree.Branch('xsec', xsec, 'xsec/F')
 myTree.Branch('sjSF', sjSF, 'sjSF/F')
 myTree.Branch('sjSFup', sjSFup, 'sjSFup/F')
@@ -386,6 +422,28 @@ myTree.Branch('genjet1BH', genjet1BH, 'genjet1BH/F')
 myTree.Branch('genjet2BH', genjet2BH, 'genjet2BH/F')
 myTree.Branch('genjet1CH', genjet1CH, 'genjet1CH/F')
 myTree.Branch('genjet2CH', genjet2CH, 'genjet2CH/F')
+myTree.Branch('nLooseEle', nLooseEle, 'nLooseEle/F')
+myTree.Branch('nLooseMu', nLooseMu, 'nLooseMu/F')
+myTree.Branch('HLT_PFHT350_v', HLT_PFHT350_v, 'HLT_PFHT350_v/F')
+myTree.Branch('HLT_PFHT400_SixJet30_v', HLT_PFHT400_SixJet30_v, 'HLT_PFHT400_SixJet30_v/F')
+myTree.Branch('HLT_PFHT450_SixJet40_v', HLT_PFHT450_SixJet40_v, 'HLT_PFHT450_SixJet40_v/F')
+myTree.Branch('HLT_PFMET120_Mu5_v', HLT_PFMET120_Mu5_v, 'HLT_PFMET120_Mu5_v/F')
+myTree.Branch('HLT_PFHT800_v', HLT_PFHT800_v, 'HLT_PFHT800_v/F')
+myTree.Branch('HLT_PFHT750_4JetPt50_v', HLT_PFHT750_4JetPt50_v, 'HLT_PFHT750_4JetPt50_v/F')
+myTree.Branch('HLT_PFHT350_PFMET100_v', HLT_PFHT350_PFMET100_v, 'HLT_PFHT350_PFMET100_v/F')
+myTree.Branch('HLT_PFMET170_NoiseCleaned_v', HLT_PFMET170_NoiseCleaned_v, 'HLT_PFMET170_NoiseCleaned_v/F')
+myTree.Branch('HLT_PFMET120_PFMHT120_IDTight_v', HLT_PFMET120_PFMHT120_IDTight_v, 'HLT_PFMET120_PFMHT120_IDTight_v/F')
+myTree.Branch('HLT_PFMET110_PFMHT110_IDTight_v', HLT_PFMET110_PFMHT110_IDTight_v, 'HLT_PFMET110_PFMHT110_IDTight_v/F')
+myTree.Branch('HLT_PFMET100_PFMHT100_IDTight_v', HLT_PFMET100_PFMHT100_IDTight_v, 'HLT_PFMET100_PFMHT100_IDTight_v/F')
+myTree.Branch('HLT_PFMET90_PFMHT90_IDTight_v', HLT_PFMET90_PFMHT90_IDTight_v, 'HLT_PFMET90_PFMHT90_IDTight_v/F')
+myTree.Branch('HLT_PFHT400_SixJet30_DoubleBTagCSV_p056_v', HLT_PFHT400_SixJet30_DoubleBTagCSV_p056_v, 'HLT_PFHT400_SixJet30_DoubleBTagCSV_p056_v/F')
+myTree.Branch('HLT_PFHT450_SixJet40_BTagCSV_p056_v', HLT_PFHT450_SixJet40_BTagCSV_p056_v, 'HLT_PFHT450_SixJet40_BTagCSV_p056_v/F')
+myTree.Branch('HLT_AK8PFHT600_TrimR0p1PT0p03Mass50_BTagCSV_p20_v', HLT_AK8PFHT600_TrimR0p1PT0p03Mass50_BTagCSV_p20_v, 'HLT_AK8PFHT600_TrimR0p1PT0p03Mass50_BTagCSV_p20_v/F')
+myTree.Branch('HLT_AK8PFHT650_TrimR0p1PT0p03Mass50_v', HLT_AK8PFHT650_TrimR0p1PT0p03Mass50_v, 'HLT_AK8PFHT650_TrimR0p1PT0p03Mass50_v/F')
+myTree.Branch('HLT_AK8PFHT700_TrimR0p1PT0p03Mass50_v', HLT_AK8PFHT700_TrimR0p1PT0p03Mass50_v, 'HLT_AK8PFHT700_TrimR0p1PT0p03Mass50_v/F')
+myTree.Branch('HLT_PFHT650_WideJetMJJ900DEtaJJ1p5_v', HLT_PFHT650_WideJetMJJ900DEtaJJ1p5_v, 'HLT_PFHT650_WideJetMJJ900DEtaJJ1p5_v/F')
+myTree.Branch('HLT_PFHT650_WideJetMJJ950DEtaJJ1p5_v', HLT_PFHT650_WideJetMJJ950DEtaJJ1p5_v, 'HLT_PFHT650_WideJetMJJ950DEtaJJ1p5_v/F')
+
 
 
 files_list	= open_files( inputfile )
@@ -441,6 +499,8 @@ for i in range(num1, num2):
     #f1.Open(files, "READ")
     treeMine  = f1.Get('tree')
     nevent = treeMine.GetEntries();
+    print nevent
+    nFills = 0	
 
     #getting the norm
     if options.isMC:
@@ -467,6 +527,7 @@ for i in range(num1, num2):
 	fJetPt  = treeMine.Jet_pt
         fJetEta  = treeMine.Jet_eta
         fNJets = treeMine.nJet
+	nAK04Jets[0] = fNJets
         genPt = treeMine.GenJet_pt
         genEta = treeMine.GenJet_eta
         genPhi = treeMine.GenJet_phi
@@ -478,7 +539,9 @@ for i in range(num1, num2):
         genjet2BH[0] = genBH[1]
         genjet1CH[0] = genCH[0]
         genjet2CH[0] = genCH[1]
+	MET[0] = treeMine.met_pt
 	fjUngroomedN = treeMine.nFatjetAK08ungroomed
+	nAK08Jets[0] = fjUngroomedN
         fjUngroomedPt = treeMine.FatjetAK08ungroomed_pt
 	fjUngroomedEta = treeMine.FatjetAK08ungroomed_eta
 	fjUngroomedPhi = treeMine.FatjetAK08ungroomed_phi
@@ -516,6 +579,25 @@ for i in range(num1, num2):
         hltHT650_MJJ950 = treeMine.HLT_BIT_HLT_PFHT650_WideJetMJJ950DEtaJJ1p5_v
         hltAK8PFJet360 = treeMine.HLT_BIT_HLT_AK8PFJet360_TrimMass30_v
         hltAK8PFHT700 = treeMine.HLT_BIT_HLT_AK8PFHT700_TrimR0p1PT0p03Mass50_v
+	HLT_PFHT350_v[0] = treeMine.HLT_BIT_HLT_PFHT350_v
+	HLT_PFHT400_SixJet30_v[0] = treeMine.HLT_BIT_HLT_PFHT400_SixJet30_v
+	HLT_PFHT450_SixJet40_v[0] = treeMine.HLT_BIT_HLT_PFHT450_SixJet40_v
+	HLT_PFMET120_Mu5_v[0] = treeMine.HLT_BIT_HLT_PFMET120_Mu5_v
+	HLT_PFHT800_v[0] = hltHT800
+	HLT_PFHT750_4JetPt50_v[0] = treeMine.HLT_BIT_HLT_PFHT750_4JetPt50_v
+	HLT_PFHT350_PFMET100_v[0] = treeMine.HLT_BIT_HLT_PFHT350_PFMET100_v
+	HLT_PFMET170_NoiseCleaned_v[0] = treeMine.HLT_BIT_HLT_PFMET170_NoiseCleaned_v
+	HLT_PFMET120_PFMHT120_IDTight_v[0] = treeMine.HLT_BIT_HLT_PFMET120_PFMHT120_IDTight_v
+	HLT_PFMET110_PFMHT110_IDTight_v[0] = treeMine.HLT_BIT_HLT_PFMET110_PFMHT110_IDTight_v
+	HLT_PFMET100_PFMHT100_IDTight_v[0] = treeMine.HLT_BIT_HLT_PFMET100_PFMHT100_IDTight_v
+	HLT_PFMET90_PFMHT90_IDTight_v[0] = treeMine.HLT_BIT_HLT_PFMET90_PFMHT90_IDTight_v
+	HLT_PFHT400_SixJet30_DoubleBTagCSV_p056_v[0] = treeMine.HLT_BIT_HLT_PFHT400_SixJet30_DoubleBTagCSV_p056_v
+	HLT_PFHT450_SixJet40_BTagCSV_p056_v[0] = treeMine.HLT_BIT_HLT_PFHT450_SixJet40_BTagCSV_p056_v
+	HLT_AK8PFHT600_TrimR0p1PT0p03Mass50_BTagCSV_p20_v[0] = treeMine.HLT_BIT_HLT_AK8PFHT600_TrimR0p1PT0p03Mass50_BTagCSV_p20_v
+	HLT_AK8PFHT650_TrimR0p1PT0p03Mass50_v[0] = treeMine.HLT_BIT_HLT_AK8PFHT650_TrimR0p1PT0p03Mass50_v
+	HLT_AK8PFHT700_TrimR0p1PT0p03Mass50_v[0] = treeMine.HLT_BIT_HLT_AK8PFHT700_TrimR0p1PT0p03Mass50_v
+	HLT_PFHT650_WideJetMJJ900DEtaJJ1p5_v[0] = treeMine.HLT_BIT_HLT_PFHT650_WideJetMJJ900DEtaJJ1p5_v
+	HLT_PFHT650_WideJetMJJ950DEtaJJ1p5_v[0] = treeMine.HLT_BIT_HLT_PFHT650_WideJetMJJ950DEtaJJ1p5_v
         Data = treeMine.isData
         vType = treeMine.Vtype
         EVT = treeMine.evt 
@@ -524,7 +606,6 @@ for i in range(num1, num2):
         genTopPts = treeMine.GenTop_pt
         JSON = treeMine.json
         
-      
 	#saving whether an event passes desired trigger (bb = HT800 pass, sj = pass any of the five saved triggers
         matched = 0    
 	if hltHT800 > 0:
@@ -555,7 +636,8 @@ for i in range(num1, num2):
         trigWeightUp[0] = trigger_function(histo_efficiency_up, int(round(hT)))    
         trigWeightDown[0] = trigger_function(histo_efficiency_down, int(round(hT)))    
         trigWeight2Up[0] = trigger_function(histo_efficiency_2up, int(round(hT)))   
-        trigWeight2Down[0] = trigger_function(histo_efficiency_2down, int(round(hT)))                     
+        trigWeight2Down[0] = trigger_function(histo_efficiency_2down, int(round(hT)))                    
+	 
         #json for data
         bbj.Fill(triggerpassbb[0])
         if Data and treeMine.json < 1:
@@ -567,6 +649,96 @@ for i in range(num1, num2):
 #            continue
 
         bb1.Fill(triggerpassbb[0])
+
+	#Determining the number of medium working point AK4 btags
+	nbtagMWP = 0
+	btagCSV = treeMine.Jet_btagCSV
+        for i in range(0,fNJets):
+		if btagCSV[i] > 0.8:
+			nbtagMWP += 1 	
+	nAK04btagsMWP[0] = nbtagMWP
+	#Calculating DeltaPhi between met for 4 leading pT AK4 jets
+	Jet_phi = treeMine.Jet_phi
+	met_phi = treeMine.met_phi	
+        if fNJets > 0:
+		if abs(Jet_phi[0] - met_phi) > 3.14159265359:
+			DeltaPhi1[0] = abs(2*3.14159265359 - abs(met_phi - Jet_phi[0]))
+		elif abs(Jet_phi[0] - met_phi) < 3.14159265359:
+			DeltaPhi1[0] = abs(Jet_phi[0] - met_phi)
+        if fNJets > 1:
+                if abs(Jet_phi[1] - met_phi) > 3.14159265359:
+                        DeltaPhi2[0] = abs(2*3.14159265359 - abs(met_phi - Jet_phi[1]))
+                elif abs(Jet_phi[1] - met_phi) < 3.14159265359:
+                        DeltaPhi2[0] = abs(Jet_phi[1] - met_phi)
+        if fNJets > 2:
+                if abs(Jet_phi[2] - met_phi) > 3.14159265359:
+                        DeltaPhi3[0] = abs(2*3.14159265359 - abs(met_phi - Jet_phi[2]))
+                elif abs(Jet_phi[2] - met_phi) < 3.14159265359:
+                        DeltaPhi3[0] = abs(Jet_phi[2] - met_phi)
+        if fNJets > 3:
+                if abs(Jet_phi[3] - met_phi) > 3.14159265359:
+                        DeltaPhi4[0] = abs(2*3.14159265359 - abs(met_phi - Jet_phi[3]))
+                elif abs(Jet_phi[3] - met_phi) < 3.14159265359:
+                        DeltaPhi4[0] = abs(Jet_phi[3] - met_phi)
+
+
+	#Determining the number of loose working point muons
+	nLooseMuons = 0
+	NSelLeptons = treeMine.nselLeptons
+	isPFMuon = treeMine.selLeptons_isPFMuon
+	isGlobalMuon = treeMine.selLeptons_isGlobalMuon
+	isTrackerMuon = treeMine.selLeptons_isTrackerMuon
+	#for i in range(0,NSelLeptons):
+	#	if isPFMuon[i] == 1:
+	#		if isGlobalMuon[i] == 1 or isTrackerMuon[i] == 1:
+	#			nLooseMuons += 1
+
+	NAdditLeptons = treeMine.naLeptons
+        AdditisPFMuon = treeMine.aLeptons_isPFMuon
+        AdditisGlobalMuon = treeMine.aLeptons_isGlobalMuon
+        AdditisTrackerMuon = treeMine.aLeptons_isTrackerMuon
+        for i in range(0,NAdditLeptons):
+                if AdditisPFMuon[i] == 1:
+                        if AdditisGlobalMuon[i] == 1 or AdditisTrackerMuon[i] == 1:
+                                nLooseMuons += 1
+
+	nLooseMu[0] = nLooseMuons
+
+	#Determining the number of loose working point electrons
+	nLooseElectrons = 0
+	SetaSc = treeMine.selLeptons_etaSc
+	SrelIso03 = treeMine.selLeptons_relIso03
+	SeleSieie = treeMine.selLeptons_eleSieie
+	SeleDEta = treeMine.selLeptons_eleDEta
+	SeleDPhi = treeMine.selLeptons_eleDPhi
+	SeleHoE = treeMine.selLeptons_eleHoE
+	SeleExpMissingInnerHits = treeMine.selLeptons_eleExpMissingInnerHits
+	SeleooEmooP = treeMine.selLeptons_eleooEmooP
+	#for i in range(0,NSelLeptons):
+	#	if abs(SetaSc[i]) <= 1.479:
+	#		if SrelIso03[i] < 0.0994 and SeleSieie[i] < 0.011 and abs(SeleDEta[i]) < 0.00477 and abs(SeleDPhi[i]) < 0.222 and SeleHoE[i] < 0.298 and SeleooEmooP[i] < 0.241 and SeleExpMissingInnerHits[i] <= 1:
+#				nLooseElectrons += 1
+	#	elif abs(SetaSc[i]) > 1.479:
+	#		if SrelIso03[i] < 0.107 and SeleSieie[i] < 0.0314 and abs(SeleDEta[i]) < 0.00868 and abs(SeleDPhi[i]) < 0.213 and SeleHoE[i] < 0.101 and SeleooEmooP[i] < 0.14 and SeleExpMissingInnerHits[i] <= 1:
+#				nLooseElectrons += 1
+
+        AetaSc = treeMine.aLeptons_etaSc
+        ArelIso03 = treeMine.aLeptons_relIso03
+        AeleSieie = treeMine.aLeptons_eleSieie
+        AeleDEta = treeMine.aLeptons_eleDEta
+        AeleDPhi = treeMine.aLeptons_eleDPhi
+        AeleHoE = treeMine.aLeptons_eleHoE
+        AeleExpMissingInnerHits = treeMine.aLeptons_eleExpMissingInnerHits
+        AeleooEmooP = treeMine.aLeptons_eleooEmooP
+        for i in range(0,NAdditLeptons):
+                if abs(AetaSc[i]) <= 1.479:
+	                if ArelIso03[i] < 0.0994 and AeleSieie[i] < 0.011 and abs(AeleDEta[i]) < 0.00477 and abs(AeleDPhi[i]) < 0.222 and AeleHoE[i] < 0.298 and AeleooEmooP[i] < 0.241 and AeleExpMissingInnerHits[i] <= 1:
+                        	nLooseElectrons += 1
+                elif abs(AetaSc[i]) > 1.479:
+                        if ArelIso03[i] < 0.107 and AeleSieie[i] < 0.0314 and abs(AeleDEta[i]) < 0.00868 and abs(AeleDPhi[i]) < 0.213 and AeleHoE[i] < 0.101 and AeleooEmooP[i] < 0.14 and AeleExpMissingInnerHits[i] <= 1:
+                        	nLooseElectrons += 1
+
+	nLooseEle[0] = nLooseElectrons
 
 	#filling an array with jet 4-vectors for jets pt > 30 and |eta| < 2.5, an array of tau21s, and an array of bbtag values, pmass, id, nbhadrons, nchadrons, flavor, l1l2l3 corr, l2l3 corr, JER
         jets = []
@@ -645,6 +817,7 @@ for i in range(num1, num2):
   
         bb3.Fill(triggerpassbb[0])
 
+        nFills += 1
 	#higgs tagging - matching higgs gen jet to the 1 and 2 pt jet
 	if options.isMC:
             hjets = []
@@ -1069,7 +1242,7 @@ for i in range(num1, num2):
   	'''
 	#filling the tree
         myTree.Fill()
-
+	
 	#filling error values for each object
 	genjet1BH[0] = -100.0
         genjet2BH[0] = -100.0
@@ -1092,11 +1265,17 @@ for i in range(num1, num2):
 	jet1bbtag[0] = -100.0
 	jet2bbtag[0] = -100.0
 	triggerpassbb[0] = -100.0
+	DeltaPhi1[0] = -100.0
+        DeltaPhi2[0] = -100.0
+        DeltaPhi3[0] = -100.0
+        DeltaPhi4[0] = -100.0
 #	PUWeight[0]= -100.0
 	
     
     f1.Close()
 
+print "nFills"
+print nFills
 print "OK"
 
 f.cd()
